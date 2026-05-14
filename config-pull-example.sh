@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# === CONFIGURATION ===
+REMOTE_USER="$USER"
+REMOTE_HOST="127.0.0.1"
+REMOTE_HOST_NAME="my-computer"
+REMOTE_SOURCE="/home/$REMOTE_USER"
+NAS_DEST="/volume/ABCKUP/backups/$REMOTE_HOST_NAME/$REMOTE_USER"
+EXCLUDE_FILE="backup-exclude.txt"
