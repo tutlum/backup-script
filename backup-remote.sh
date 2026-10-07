@@ -3,6 +3,10 @@
 # === CONFIGURATION ===
 source config.sh
 
+if [ ! "$1" == "" ]; then
+    source "$1"
+fi
+
 # === Derived variables ===
 TODAY=$(date +%F)
 SSH_CONN="$REMOTE_USER@$REMOTE_HOST"
@@ -17,6 +21,7 @@ EOF
 )
 
 if [ -n "$LATEST_BACKUP" ]; then
+    # if difference to last is small offer to overwrite
     echo "Found previous backup: $LATEST_BACKUP"
 else
     echo "No previous backup found."
